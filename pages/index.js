@@ -208,7 +208,7 @@ const Home = () => {
 
   return (
     <Page gaLogPage='home'>
-      <img src='/images/logo.svg' style={{ position: 'fixed' }} />
+      <img src='/images/logo.svg' style={{ marginBottom: -40 }} />
       <Hero />
       <Section
         handleChange={handleChange}
