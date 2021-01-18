@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
-import { ExpandMore as ExpandMoreIcon } from '@styled-icons/material/ExpandMore';
+import { Plus as PlusIcon } from '@styled-icons/boxicons-regular/Plus';
 // import { Linkedin as LinkedinIcon } from '@styled-icons/bootstrap/Linkedin';
 // import { cms } from '../store';
 import { Page } from '../components';
@@ -24,8 +24,8 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500
   },
   expandMoreIcon: {
-    width: 30,
-    transform: 'rotate(-90deg)'
+    width: 30
+    // transform: 'rotate(-90deg)'
   },
   lineHeight18: {
     lineHeight: '18px'
@@ -45,11 +45,15 @@ const Accordion = withStyles({
   root: {
     boxShadow: 'none',
     backgroundColor: 'transparent',
+    borderBottom: '1px solid rgba(0, 0, 0, .125)',
     '&:before': {
       display: 'none'
     },
     '&$expanded': {
       margin: 'auto'
+    },
+    '&:last-of-type': {
+      borderBottom: 'none'
     }
   },
   expanded: {}
@@ -58,7 +62,6 @@ const Accordion = withStyles({
 const AccordionSummary = withStyles({
   root: {
     backgroundColor: 'transparent',
-    // borderBottom: '1px solid rgba(0, 0, 0, .125)',
     // marginBottom: -1,
     padding: 0,
     paddingLeft: 6,
@@ -68,7 +71,7 @@ const AccordionSummary = withStyles({
       minHeight: 'unset'
     },
     display: 'flex',
-    flexDirection: 'row-reverse',
+    // flexDirection: 'row-reverse',
     alignItems: 'center'
   },
   content: {
@@ -88,7 +91,7 @@ const AccordionSummary = withStyles({
   expandIcon: {
     marginLeft: '-25px',
     '&$expanded': {
-      transform: 'rotate(90deg)'
+      transform: 'rotate(45deg)'
     }
   }
 })(MuiAccordionSummary);
@@ -134,9 +137,14 @@ const AccordionDetails = withStyles((theme) => ({
 // Components
 const Hero = () => {
   return (
-    <Box display='flex' alignItems='flex-end' justifyContent='space-around'>
+    <Box
+      display='flex'
+      alignItems='flex-end'
+      justifyContent='space-around'
+      mb={6}
+    >
       <Box
-        fontSize='6vw'
+        fontSize='7vw'
         fontWeight={600}
         fontFamily='serif'
         lineHeight={1}
@@ -156,7 +164,7 @@ const Section = ({ title, content, expanded, handleChange, index }) => {
     <Accordion expanded={expanded === index} onChange={handleChange(index)}>
       <AccordionSummary
         expandIcon={
-          <ExpandMoreIcon className={classes.expandMoreIcon} color='black' />
+          <PlusIcon className={classes.expandMoreIcon} color='black' />
         }
         // aria-controls={`${careerItm.id}-content`}
         // id={`${careerItm.id}-header`}
@@ -208,13 +216,6 @@ const Home = () => {
         index={0}
         title='The Consultancy'
         content='We help Entrepreneurs, engineers and innovators to communicate their ideas to other humans, in a way the users would want to consume them. You understand technology, we understand people.'
-      />
-      <Section
-        handleChange={handleChange}
-        expanded={expanded}
-        index={1}
-        title='Schedule a Meeting'
-        content='calendar component'
       />
       <Section
         handleChange={handleChange}
