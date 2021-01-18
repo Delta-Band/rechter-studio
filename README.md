@@ -1,1 +1,1 @@
-# rechter-studio
+# Rechter Sudio Website
