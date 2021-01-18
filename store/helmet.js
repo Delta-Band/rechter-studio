@@ -1,8 +1,7 @@
 const reducer = (
   state = {
     tabTitle: 'Rechter Studio',
-    metaDescription:
-      'Rechter Studio is a leading provider of CRM Powered websites and marketing materials for Tech companies' // TODO: Update This
+    metaDescription: 'Creative Consulting For Tech Businesses.' // TODO: Update This
   },
   action
 ) => {

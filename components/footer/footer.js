@@ -42,7 +42,7 @@ const Footer = () => {
             p={0}
             className={styles.boxLeft}
           >
-            <span>{footerCMS.address}</span>
+            <span>Rechter, All rights reserved 2020</span>
           </Box>
         </Grid>
         <Grid item xs={12} lg={4}>
@@ -62,11 +62,7 @@ const Footer = () => {
               {footerCMS.email}
             </a>
             <span className={styles.divider}>|</span>
-            <a
-              href={footerCMS.linkedInURL}
-              target='_blank'
-              rel='noreferrer'
-            >
+            <a href={footerCMS.linkedInURL} target='_blank' rel='noreferrer'>
               LinkedIn
             </a>
           </Box>

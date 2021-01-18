@@ -131,6 +131,47 @@ const AccordionDetails = withStyles((theme) => ({
   }
 }))(MuiAccordionDetails);
 
+// Components
+const Hero = () => {
+  return (
+    <Box display='flex' alignItems='flex-end' justifyContent='space-around'>
+      <Box
+        fontSize='6vw'
+        fontWeight={600}
+        fontFamily='serif'
+        lineHeight={1}
+        pb={5}
+      >
+        Creative Consulting For Tech Businesses.
+      </Box>
+      <img src='/images/hero-art.png' style={{ width: '30vw' }} />
+    </Box>
+  );
+};
+
+const Section = ({ title, content, expanded, handleChange, index }) => {
+  const classes = useStyles();
+
+  return (
+    <Accordion expanded={expanded === index} onChange={handleChange(index)}>
+      <AccordionSummary
+        expandIcon={
+          <ExpandMoreIcon className={classes.expandMoreIcon} color='black' />
+        }
+        // aria-controls={`${careerItm.id}-content`}
+        // id={`${careerItm.id}-header`}
+      >
+        <Typography className={classes.heading}>{title}</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Box display='flex' flexDirection='column' width='100%'>
+          {content}
+        </Box>
+      </AccordionDetails>
+    </Accordion>
+  );
+};
+
 const Home = () => {
   // Selectors
   // const careersCMS = useSelector(cms.selectors.careers);
@@ -141,7 +182,7 @@ const Home = () => {
   const [expanded, setExpanded] = useState(0);
 
   // Hooks
-  const classes = useStyles();
+  // const classes = useStyles();
   // const theme = useTheme();
   // const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -159,36 +200,36 @@ const Home = () => {
 
   return (
     <Page gaLogPage='home'>
-      <Box>Hero</Box>
-      <Accordion expanded={expanded === 0} onChange={handleChange(0)}>
-        <AccordionSummary
-          expandIcon={
-            <ExpandMoreIcon className={classes.expandMoreIcon} color='black' />
-          }
-          // aria-controls={`${careerItm.id}-content`}
-          // id={`${careerItm.id}-header`}
-        >
-          <Typography className={classes.heading}>The Consulancy</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box display='flex' flexDirection='column' width='100%'>
-            <Typography component='span'>Lorem Ipsum...</Typography>
-            {/* <Box mt={3} mb={1}>
-              <Button
-                fullWidth
-                color='primary'
-                variant='outlined'
-                style={{
-                  borderWidth: 2
-                }}
-                onClick={openEmail}
-              >
-                <div style={theme.btnText}>Apply</div>
-              </Button>
-            </Box> */}
-          </Box>
-        </AccordionDetails>
-      </Accordion>
+      <img src='/images/logo.svg' style={{ position: 'fixed' }} />
+      <Hero />
+      <Section
+        handleChange={handleChange}
+        expanded={expanded}
+        index={0}
+        title='The Consultancy'
+        content='We help Entrepreneurs, engineers and innovators to communicate their ideas to other humans, in a way the users would want to consume them. You understand technology, we understand people.'
+      />
+      <Section
+        handleChange={handleChange}
+        expanded={expanded}
+        index={1}
+        title='Schedule a Meeting'
+        content='calendar component'
+      />
+      <Section
+        handleChange={handleChange}
+        expanded={expanded}
+        index={2}
+        title='Apply for Position'
+        content='A general text (not devided to jobs) invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata'
+      />
+      <Section
+        handleChange={handleChange}
+        expanded={expanded}
+        index={3}
+        title='Contact Us'
+        content='Lorem Ipsum'
+      />
     </Page>
   );
   // return Animation;
