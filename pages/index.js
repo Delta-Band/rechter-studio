@@ -7,6 +7,8 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 // import { Box, useMediaQuery } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
+import Lottie from 'lottie-react-web';
+import haroLottie from './hero-art.json';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
@@ -152,7 +154,19 @@ const Hero = () => {
       >
         Creative Consulting For Tech Businesses.
       </Box>
-      <img src='/images/hero-art.png' style={{ width: '30vw' }} />
+      <Lottie
+        isPaused={false}
+        direction={1}
+        options={{
+          animationData: haroLottie,
+          loop: true
+        }}
+        width='30vw'
+        style={{
+          flexShrink: 0
+        }}
+      />
+      {/* <img src='/images/hero-art.png' style={{ width: '30vw' }} /> */}
     </Box>
   );
 };
@@ -208,7 +222,10 @@ const Home = () => {
 
   return (
     <Page gaLogPage='home'>
-      <img src='/images/logo.svg' style={{ marginBottom: -40 }} />
+      <img
+        src='/images/logo.svg'
+        style={{ position: 'absolute', transform: 'translateY(10px)' }}
+      />
       <Hero />
       <Section
         handleChange={handleChange}
