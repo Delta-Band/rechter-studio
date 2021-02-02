@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 // import { useSelector } from 'react-redux';
 // import parse from 'html-react-parser';
 // import { makeStyles, withStyles, useTheme } from '@material-ui/core/styles';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles, useTheme } from '@material-ui/core/styles';
+
 // import { Box, useMediaQuery, Button } from '@material-ui/core';
 // import { Box, useMediaQuery } from '@material-ui/core';
 import { Box } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Lottie from 'lottie-react-web';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import haroLottie from './hero-art.json';
 import MuiAccordion from '@material-ui/core/Accordion';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
@@ -105,7 +107,6 @@ const AccordionDetails = withStyles((theme) => ({
     paddingTop: 0,
     '& *': {
       lineHeight: '32.4px !important',
-      fontFamily: theme.fontFamily,
       fontSize: 18
     },
     '& ul': {
@@ -138,6 +139,10 @@ const AccordionDetails = withStyles((theme) => ({
 
 // Components
 const Hero = () => {
+  const theme = useTheme();
+  // const isXL = useMediaQuery(theme.breakpoints.up('xl'));
+  const isLG = useMediaQuery(theme.breakpoints.up('lg'));
+
   return (
     <Box
       display='flex'
@@ -146,13 +151,18 @@ const Hero = () => {
       mb={6}
     >
       <Box
-        fontSize='7vw'
-        fontWeight={600}
-        fontFamily='serif'
+        fontSize={isLG ? 120 : 90}
+        fontWeight={500}
+        fontFamily={theme.headerFontFamily}
         lineHeight={1}
-        pb={5}
+        pb={1}
+        width='60%'
       >
-        Creative Consulting For Tech Businesses.
+        Creative
+        <br />
+        Consulting
+        <br />
+        For Tech Businesses.
       </Box>
       <Lottie
         isPaused={false}
@@ -161,10 +171,7 @@ const Hero = () => {
           animationData: haroLottie,
           loop: true
         }}
-        width='30vw'
-        style={{
-          flexShrink: 0
-        }}
+        width='40%'
       />
       {/* <img src='/images/hero-art.png' style={{ width: '30vw' }} /> */}
     </Box>
@@ -173,6 +180,7 @@ const Hero = () => {
 
 const Section = ({ title, content, expanded, handleChange, index }) => {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <Accordion expanded={expanded === index} onChange={handleChange(index)}>
@@ -183,7 +191,9 @@ const Section = ({ title, content, expanded, handleChange, index }) => {
         // aria-controls={`${careerItm.id}-content`}
         // id={`${careerItm.id}-header`}
       >
-        <Typography className={classes.heading}>{title}</Typography>
+        <Typography className={classes.heading} fontFamily={theme.fontFamily}>
+          {title}
+        </Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Box display='flex' flexDirection='column' width='100%'>
@@ -222,10 +232,6 @@ const Home = () => {
 
   return (
     <Page gaLogPage='home'>
-      <img
-        src='/images/logo.svg'
-        style={{ position: 'absolute', transform: 'translateY(10px)' }}
-      />
       <Hero />
       <Section
         handleChange={handleChange}

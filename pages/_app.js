@@ -12,6 +12,9 @@ import { GA } from '../services';
 import styles from './styles.scss';
 import Footer from '../components/footer/footer';
 import './fonts.scss';
+// import gtLight from './fonts/gt-walsheim/GT-Walsheim-Light.ttf';
+// import gtRegular from './fonts/gt-walsheim/GT-Walsheim-Regular.ttf';
+// import gtBold from './fonts/gt-walsheim/GT-Walsheim-Bold.ttf';
 
 reactor.init();
 
@@ -42,7 +45,8 @@ const theme = createMuiTheme({
     }
   },
   ease: 'cubic-bezier(0.23, 1, 0.32, 1)',
-  fontFamily: 'ubuntu',
+  fontFamily: 'gt-walsheim',
+  headerFontFamily: 'domain-display',
   btnText: {
     textTransform: 'none',
     fontSize: 19
@@ -68,13 +72,21 @@ class MyApp extends App {
         <div>
           {/* <Navigation /> */}
           {/* <Video /> */}
+          <img
+            src='/images/logo.svg'
+            style={{
+              position: 'absolute',
+              transform: 'translate(5vw, 2.5vw)',
+              zIndex: 3
+            }}
+          />
           <div className={styles.stage}>
             <AnimatePresence>
               <Component {...pageProps} key={router.route} />
             </AnimatePresence>
-            <Footer />
           </div>
         </div>
+        <Footer />
       </ThemeProvider>
     );
   }

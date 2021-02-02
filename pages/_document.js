@@ -15,7 +15,7 @@ class MyDocument extends Document {
         <body
           style={{
             margin: '0 !important',
-            fontFamily: 'ubuntu',
+            fontFamily: 'gt-walsheim',
             fontWeight: 300
           }}
         >
