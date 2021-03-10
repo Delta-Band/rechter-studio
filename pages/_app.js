@@ -1,6 +1,10 @@
+import React from 'react';
 import NextApp from 'next/app';
-import { ThemeProvider } from '@material-ui/core/styles';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import {
+  ThemeProvider,
+  createMuiTheme,
+  MuiThemeProvider
+} from '@material-ui/core/styles';
 import parser from 'ua-parser-js';
 import mediaQuery from 'css-mediaquery';
 import '../styles/globals.css';
