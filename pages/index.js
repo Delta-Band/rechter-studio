@@ -51,7 +51,7 @@ export default function Home() {
         <motion.div
           style={{
             position: 'absolute',
-            rotate: -25,
+            rotate: -45,
             x: theme.spacing(1)
           }}
           transition={{
@@ -60,7 +60,7 @@ export default function Home() {
             duration: 1.2
           }}
           animate={{
-            rotate: [null, -55, -15, -55, -25, -25],
+            rotate: [null, -15, -45, -15, -45, -45],
             x: [
               theme.spacing(1),
               theme.spacing(1),
@@ -102,7 +102,8 @@ export default function Home() {
     return (
       <motion.div
         style={{
-          opacity: 0
+          opacity: 0,
+          backfaceVisibility: 'hidden'
         }}
         transition={{
           type: 'spring',
@@ -121,8 +122,8 @@ export default function Home() {
           textAlign='center'
           height={1}
           width={1}
-          position='absolute'
           p={6}
+          position='absolute'
           left={0}
           top={0}
         >
@@ -136,9 +137,46 @@ export default function Home() {
     );
   }
 
-  // function SideBack() {
-  //   return <Box>Back Side</Box>;
-  // }
+  function SideBack() {
+    return (
+      <motion.div
+        style={{
+          opacity: 0
+        }}
+        transition={{
+          type: 'spring',
+          bounce: 0,
+          delay: cardSide === 'back' ? 0.25 : 0
+        }}
+        animate={{
+          opacity: cardSide === 'back' ? 1 : 0
+        }}
+      >
+        <Box
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          justifyContent='center'
+          textAlign='center'
+          height={1}
+          width={1}
+          p={6}
+          position='absolute'
+          left={0}
+          top={0}
+          style={{
+            transform: 'rotateY(180deg)'
+          }}
+        >
+          <Typography variant='h1'>Hi,</Typography>
+          <Typography variant='h1'>my name is,</Typography>
+          <Typography variant='h1'>please email me at,</Typography>
+          <Box mb={5} />
+          <ReachOutBtn />
+        </Box>
+      </motion.div>
+    );
+  }
 
   return (
     <Fragment>
@@ -178,6 +216,7 @@ export default function Home() {
                   }}
                 >
                   <SideFront />
+                  <SideBack />
                 </Paper>
               </motion.div>
             </Grid>
