@@ -67,6 +67,7 @@ const theme = createMuiTheme({
       fontFamily: 'Domaine',
       fontWeight: 500,
       fontSize: pxToRem(46),
+      lineHeight: pxToRem(46),
       [breakpoints.down('xs')]: {
         fontSize: pxToRem(24)
       }
@@ -111,6 +112,35 @@ const theme = createMuiTheme({
     //     }
     //   }
     // },
+    MuiInputBase: {
+      input: {
+        height: pxToRem(29),
+        padding: 0,
+        fontFamily: 'Domaine',
+        fontWeight: 500,
+        fontSize: pxToRem(46),
+        color: '#0000DB',
+        [breakpoints.down('xs')]: {
+          fontSize: pxToRem(24)
+        }
+      }
+    },
+    MuiInput: {
+      underline: {
+        '&:after': {
+          bottom: '4px'
+        },
+        '&:before': {
+          bottom: '4px',
+          borderWidth: '2px !important'
+        }
+      }
+    },
+    MuiFormControl: {
+      root: {
+        height: pxToRem(29)
+      }
+    },
     MuiPaper: {
       rounded: {
         borderRadius: 35
