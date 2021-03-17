@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 import { useTheme } from '@material-ui/core/styles';
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { HandLeft } from '@styled-icons/ionicons-solid/HandLeft';
+import { LeftArrowAlt as GoBackIcon } from '@styled-icons/boxicons-regular/LeftArrowAlt';
 import { SendPlane2 as SendIcon } from '@styled-icons/remix-fill/SendPlane2';
 import { Head } from '../shared';
 
@@ -26,6 +27,7 @@ export async function getServerSideProps(context) {
     } // will be passed to the page component as props
   };
 }
+
 export default function Home({ deviceType }) {
   const [cardSide, setCardSide] = useState('front');
   console.log(`deviceType: ${deviceType}`);
@@ -51,7 +53,8 @@ export default function Home({ deviceType }) {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          position: 'relative'
+          position: 'relative',
+          cursor: 'pointer'
         }}
         transition={{ type: 'spring', bounce: 0, delay: 2 }}
         animate={{
@@ -296,7 +299,7 @@ export default function Home({ deviceType }) {
           display='flex'
           flexDirection='column'
           alignItems='center'
-          justifyContent='center'
+          // justifyContent='center'
           height={1}
           width={1}
           p={3}
@@ -307,6 +310,17 @@ export default function Home({ deviceType }) {
             transform: 'rotateY(180deg)'
           }}
         >
+          <Box width={1} mb={4}>
+            <GoBackIcon
+              onClick={() => {
+                setCardSide('front');
+              }}
+              size={34}
+              style={{
+                transform: 'translateX(-6px)'
+              }}
+            />
+          </Box>
           <form noValidate autoComplete='off'>
             <Typography variant='h2'>Hi,</Typography>
             <Box display='inline-flex' alignItems='center'>
