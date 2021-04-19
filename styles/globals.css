@@ -23,7 +23,7 @@ Fonts
 ************/
 @font-face {
   font-family: "Domaine";
-  src: url("/fonts/Domaine-Bold.otf");
+  src: url("/fonts/domaine-display-test-black.woff");
   font-weight: 700;
   font-display: swap;
 }

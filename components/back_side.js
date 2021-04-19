@@ -5,6 +5,7 @@ import SendBtn from './send_btn';
 import { FlipCard } from '../shared';
 
 function BackSide({ focus, flip }) {
+  // eslint-disable-next-line no-unused-vars
   const [formComplete, setFormComplete] = useState(0);
   const [name, setName] = useState('');
   const [from, setFrom] = useState('');

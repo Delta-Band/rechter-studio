@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
-import { Paper, Grid, Container, Box } from '@material-ui/core';
+import { Paper, Grid, Container, Box, Typography } from '@material-ui/core';
 import parser from 'ua-parser-js';
 import { motion } from 'framer-motion';
+import { useTheme } from '@material-ui/core/styles';
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { BackSide, FrontSide } from '../components';
 import { Head } from '../shared';
@@ -21,6 +22,8 @@ export async function getServerSideProps(context) {
 export default function Home({ deviceType }) {
   const [cardSide, setCardSide] = useState('front');
   console.log(`deviceType: ${deviceType}`);
+  const theme = useTheme();
+  // const classes = useStyles();
   // const upSm = useMediaQuery(theme.breakpoints.up('sm'));
   // const upMd = useMediaQuery(theme.breakpoints.up('md'));
   // const upLg = useMediaQuery(theme.breakpoints.up('lg'));
@@ -37,12 +40,12 @@ export default function Home({ deviceType }) {
         <Container
           fixed
           style={{
-            width: '340px',
+            width: '350px',
             padding: 0
           }}
         >
           <Grid container spacing={0}>
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ textAlign: 'center' }}>
               <motion.div
                 transition={{ type: 'spring', bounce: 0.5, duration: 1.5 }}
                 style={{
@@ -58,7 +61,8 @@ export default function Home({ deviceType }) {
               >
                 <Paper
                   style={{
-                    height: '560px',
+                    height: '550px',
+                    width: '100%',
                     position: 'relative'
                   }}
                 >
@@ -75,6 +79,19 @@ export default function Home({ deviceType }) {
                     }}
                   />
                 </Paper>
+                <motion.div
+                  style={{
+                    opacity: 0.2,
+                    display: 'inline-block',
+                    marginTop: theme.spacing(2),
+                    padding: theme.spacing(2),
+                    cursor: 'pointer'
+                  }}
+                  whileHover={{ scale: 1.2, opacity: 1 }}
+                >
+                  <img src='delta_logo.svg' />
+                </motion.div>
+                <Typography>Rechter. © 2021</Typography>
               </motion.div>
             </Grid>
           </Grid>
