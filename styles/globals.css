@@ -24,7 +24,20 @@ Fonts
 @font-face {
   font-family: "Domaine";
   src: url("/fonts/Domaine-Bold.otf");
-  font-style: bold;
   font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Welsheim";
+  src: url("/fonts/GT-Walsheim-Ultra-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Welsheim";
+  src: url("/fonts/GT-Walsheim-Light.ttf");
+  font-weight: 100;
   font-display: swap;
 }

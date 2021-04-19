@@ -17,25 +17,25 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       light: '#757ce8',
-      main: '#0000DB',
+      main: '#FFBEBE',
       dark: '#07003C',
       contrastText: '#fff'
     },
     secondary: {
       light: '#ff7961',
-      main: '#f44336',
+      main: '#FFBEBE',
       dark: '#ba000d',
       contrastText: '#000'
     }
   },
   typography: {
-    fontFamily: ['Domaine', 'Roboto'].join(','),
+    fontFamily: ['Domaine', 'Welsheim'].join(','),
     lineHeight: '1.8em',
     allVariants: {
       color: '#06003B'
     },
     body1: {
-      fontFamily: 'Roboto',
+      fontFamily: 'Welsheim',
       fontWeight: 100,
       fontSize: pxToRem(18),
       lineHeight: '30px',
@@ -66,20 +66,23 @@ const theme = createMuiTheme({
     h2: {
       fontFamily: 'Domaine',
       fontWeight: 500,
-      fontSize: pxToRem(46),
+      fontSize: pxToRem(24),
       lineHeight: pxToRem(46),
       [breakpoints.down('xs')]: {
         fontSize: pxToRem(24)
       }
+    },
+    h3: {
+      fontFamily: 'Welsheim',
+      fontWeight: 'bold',
+      fontStyle: 'italic',
+      textAlign: 'center',
+      fontSize: pxToRem(36),
+      lineHeight: pxToRem(30),
+      [breakpoints.down('xs')]: {
+        fontSize: pxToRem(30)
+      }
     }
-    // h3: {
-    //   fontFamily: 'Jura',
-    //   fontWeight: 300,
-    //   fontSize: pxToRem(36),
-    //   [breakpoints.down('xs')]: {
-    //     fontSize: pxToRem(24)
-    //   }
-    // },
     // h4: {
     //   fontFamily: 'Work Sans',
     //   fontWeight: 300,
@@ -118,8 +121,8 @@ const theme = createMuiTheme({
         padding: 0,
         fontFamily: 'Domaine',
         fontWeight: 500,
-        fontSize: pxToRem(46),
-        color: '#0000DB',
+        fontSize: pxToRem(24),
+        // color: '#FFBEBE',
         [breakpoints.down('xs')]: {
           fontSize: pxToRem(24)
         }

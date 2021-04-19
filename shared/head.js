@@ -17,6 +17,18 @@ function Head({ title }) {
         as='font'
         crossOrigin=''
       />
+      <link
+        rel='preload'
+        href='/fonts/GT-Walsheim-Bold.ttf'
+        as='font'
+        crossOrigin=''
+      />
+      <link
+        rel='preload'
+        href='/fonts/GT-Walsheim-Light.ttf'
+        as='font'
+        crossOrigin=''
+      />
     </NextHead>
   );
 }
