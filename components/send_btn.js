@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import { SendPlane2 as SendIcon } from '@styled-icons/remix-fill/SendPlane2';
 import { HandLeft } from '@styled-icons/ionicons-solid/HandLeft';
+import emailjs from 'emailjs-com';
 
 function SendBtn({ formComplete, name, from, email }) {
-  const [working, setWorking] = useState(false);
+  const [working, setWorking] = useState(true);
   const theme = useTheme();
 
   return (
@@ -20,14 +20,17 @@ function SendBtn({ formComplete, name, from, email }) {
           lead_email: email
         };
         const userID = 'user_54jeSZNlO93cckYtc9Sd7';
-        // emailjs.send(serviceID, templateID, templateParams, userID).then(
-        //   function (response) {
-        //     console.log('SUCCESS!', response.status, response.text);
-        //   },
-        //   function (error) {
-        //     console.log('FAILED...', error);
-        //   }
-        // );
+        setWorking(true);
+        emailjs.send(serviceID, templateID, templateParams, userID).then(
+          function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+            setWorking(false);
+          },
+          function (error) {
+            console.log('FAILED...', error);
+            setWorking(false);
+          }
+        );
       }}
       style={{
         height: '50px',

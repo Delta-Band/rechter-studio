@@ -1,5 +1,12 @@
 import React, { Fragment, useState } from 'react';
-import { Paper, Grid, Container, Box, Typography } from '@material-ui/core';
+import {
+  Paper,
+  Grid,
+  Container,
+  Box,
+  Typography,
+  Link
+} from '@material-ui/core';
 import parser from 'ua-parser-js';
 import { motion } from 'framer-motion';
 import { useTheme } from '@material-ui/core/styles';
@@ -79,20 +86,42 @@ export default function Home({ deviceType }) {
                     }}
                   />
                 </Paper>
+              </motion.div>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              container
+              justify='space-between'
+              align='center'
+              style={{ padding: theme.spacing(2) }}
+            >
+              <Grid item>
                 <motion.div
                   style={{
                     opacity: 0.2,
                     display: 'inline-block',
-                    marginTop: theme.spacing(2),
-                    padding: theme.spacing(2),
+                    // marginTop: theme.spacing(3),
+                    padding: theme.spacing(1),
                     cursor: 'pointer'
                   }}
                   whileHover={{ scale: 1.2, opacity: 1 }}
                 >
-                  <img src='delta_logo.svg' />
+                  <Link
+                    style={{ color: 'inherit' }}
+                    href='https://delta.band'
+                    target='_blank'
+                    rel='noopener'
+                  >
+                    <img src='delta_logo.svg' />
+                  </Link>
                 </motion.div>
-                <Typography>Rechter. © 2021</Typography>
-              </motion.div>
+              </Grid>
+              <Grid item>
+                <Typography style={{ opacity: 0.2, padding: '5px' }}>
+                  Rechter. © 2021
+                </Typography>
+              </Grid>
             </Grid>
           </Grid>
         </Container>

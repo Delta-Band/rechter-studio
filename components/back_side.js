@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Box, TextField, Grid } from '@material-ui/core';
-import { LeftArrowAlt as GoBackIcon } from '@styled-icons/boxicons-regular/LeftArrowAlt';
+import { Typography, Box, TextField } from '@material-ui/core';
 import SendBtn from './send_btn';
 import { FlipCard } from '../shared';
 
@@ -44,23 +43,14 @@ function BackSide({ focus, flip }) {
 
   return (
     <FlipCard show={focus} backSide>
-      <Grid container>
-        <Grid item xs={1}>
-          <GoBackIcon
-            onClick={() => {
-              flip();
-            }}
-            size={34}
-            style={{
-              transform: 'translateX(-6px)',
-              cursor: 'pointer'
-            }}
-          />
-        </Grid>
-        <Grid item xs={10}>
-          <Typography variant='h3'>Reach Out</Typography>
-        </Grid>
-      </Grid>
+      <Typography
+        variant='h3'
+        onClick={() => {
+          flip();
+        }}
+      >
+        Reach Out
+      </Typography>
       <form noValidate autoComplete='off' style={{ textAlign: 'left' }}>
         <Typography variant='h2'>Hi,</Typography>
         <Box display='inline-flex' alignItems='center'>
