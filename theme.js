@@ -57,11 +57,12 @@ const theme = createMuiTheme({
     h1: {
       fontFamily: 'Domaine',
       fontWeight: 500,
-      fontSize: pxToRem(48),
-      [breakpoints.down('xs')]: {
-        fontSize: pxToRem(42),
-        lineHeight: pxToRem(59)
-      }
+      fontSize: pxToRem(40),
+      lineHeight: pxToRem(54)
+      // [breakpoints.down('xs')]: {
+      //   fontSize: pxToRem(40),
+      //   lineHeight: pxToRem(59)
+      // }
     },
     h2: {
       fontFamily: 'Domaine',

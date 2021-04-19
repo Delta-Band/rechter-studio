@@ -29,7 +29,7 @@ export default function FlipCard({ children, show, backSide }) {
         textAlign='center'
         height={1}
         width={1}
-        p={10}
+        p={7.5}
         pl={4}
         pr={4}
         position='absolute'

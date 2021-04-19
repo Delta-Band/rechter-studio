@@ -28,7 +28,7 @@ function ReachOutBtn({ flip }) {
       }}
       transition={{ type: 'spring', bounce: 0, delay: 2 }}
       animate={{
-        width: 162,
+        width: 178,
         backgroundColor: 'rgba(0, 0, 0, 1)',
         color: '#FFF'
       }}
@@ -76,7 +76,9 @@ function ReachOutBtn({ flip }) {
         <Typography
           style={{
             color: 'inherit',
-            fontFamily: 'Domaine',
+            fontFamily: 'Welsheim',
+            fontWeight: 'bold',
+            fontStyle: 'italic',
             fontSize: '18px',
             cursor: 'pointer'
           }}

@@ -40,7 +40,7 @@ export default function Home({ deviceType }) {
         <Container
           fixed
           style={{
-            width: '350px',
+            width: '330px',
             padding: 0
           }}
         >
@@ -61,7 +61,7 @@ export default function Home({ deviceType }) {
               >
                 <Paper
                   style={{
-                    height: '550px',
+                    height: '500px',
                     width: '100%',
                     position: 'relative'
                   }}
