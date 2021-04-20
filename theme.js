@@ -148,6 +148,10 @@ const theme = createMuiTheme({
     MuiPaper: {
       rounded: {
         borderRadius: 35
+      },
+      elevation5: {
+        boxShadow:
+          '0px 3px 5px -1px rgb(0 0 0 / 10%), 0px 5px 8px 0px rgb(0 0 0 / 7%), 0px 1px 14px 0px rgb(0 0 0 / 6%)'
       }
     }
     // MuiLink: {

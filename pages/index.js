@@ -67,6 +67,7 @@ export default function Home({ deviceType }) {
                 }}
               >
                 <Paper
+                  elevation={5}
                   style={{
                     height: '500px',
                     width: '100%',

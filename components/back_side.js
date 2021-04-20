@@ -45,6 +45,7 @@ function BackSide({ focus, flip }) {
     <FlipCard show={focus} backSide>
       <Typography
         variant='h3'
+        style={{ cursor: 'pointer' }}
         onClick={() => {
           flip();
         }}
@@ -113,10 +114,11 @@ function BackSide({ focus, flip }) {
       </form>
       <SendBtn
         isValid={nameIsValid && fromIsValid && emailIsValid}
-        formComplete={3}
+        formComplete={formComplete}
         name={name}
         from={from}
         email={email}
+        flip={flip}
       />
     </FlipCard>
   );
