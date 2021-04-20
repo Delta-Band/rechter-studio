@@ -1,3 +1,2 @@
-export { default as LandscapeBlocker } from './landscape-blocker/landscape-blocker';
-export { default as ContactrForm } from './contact-form/contact-form';
-export { default as Page } from './page';
+export { default as BackSide } from './back_side';
+export { default as FrontSide } from './front_side';
