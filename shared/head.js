@@ -31,7 +31,7 @@ function Head({ title }) {
       />
       <script
         async
-        src='https://www.googletagmanager.com/gtag/js?id=G-DB6ZDKWTYM'
+        src='https://www.googletagmanager.com/gtag/js?id=G-YF09FYF8VK'
       ></script>
       <script
         dangerouslySetInnerHTML={{
@@ -39,7 +39,7 @@ function Head({ title }) {
         window.dataLayer = window.dataLayer || [];
         function gtag(){window.dataLayer.push(arguments)}
         gtag("js", new Date());
-        gtag('config', 'G-DB6ZDKWTYM');
+        gtag('config', 'G-YF09FYF8VK');
     `
         }}
       ></script>
